@@ -1,0 +1,43 @@
+{% include 'head.twig' %}
+
+<style>
+    body {
+        background: linear-gradient(to left, #87CEEB, #1E90FF);
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    .start-btn {
+        background: linear-gradient(to left, #0b6fff, #3047a8);
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s ease;
+        outline: none;
+    }
+
+    .start-btn:hover {
+        background-color: darken(blue, 10%);
+    }
+</style>
+    <script>
+        function GoToHax() {
+            window.location.href = "index-hax.php";
+        }
+    </script>
+<body>
+    <h1>Welcome to nonhost !</h1>
+    <h2>Created by cedkeChat01 and TeamChat Community</h2>
+    <p style="font-size: 20px;">Join the discord server <a href="https://discord.gg/srfxwZHm">here</a>.</p>
+    <button class="start-btn" onclick="GoToHax()">Start mods</button>
+</body>
+
+{% include 'footer.twig' %}
