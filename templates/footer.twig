@@ -1,3 +1,78 @@
 <footer>
+    <style>
+        .bandwidth-raccoon {
+            width: 100px; 
+            cursor: pointer; 
+        }
+        .bandwidth-raccoon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .bandwidth-raccoon-bubble {
+            position: absolute;
+            bottom: 120%; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: none; 
+        }
+        .bandwidth-raccoon-bubble::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            border: 10px solid transparent;
+            border-top-color: #000;
+            transform: translateX(-50%);
+        }
+        .speak .bandwidth-raccoon-bubble {
+            display: block;
+        }
+    </style>
+
+    <div class="bandwidth-raccoon-wrapper">
+        <img src="../duck.png" alt="duck" class="bandwidth-raccoon">
+        <div class="bandwidth-raccoon-bubble">
+            <span class="bandwidth-raccoon-bubble-text"></span>
+        </div>
+    </div>
+
+    <script>
+        let i = 0;
+
+        function unescapeHTML(string) {
+            const el = document.createElement("span");
+            el.innerHTML = string;
+            return el.innerText;
+        }
+
+        const randomSentences = [
+            "i'm a kind duck, Qwak Qwak !!",
+            "I love bathing in water with my feathers",
+            "Give me something to eat, i'm hungry..",
+            "My dad is juliencosabatino !!! QWAAAAKKK"
+        ];
+
+        const bandwidthRaccoon = document.querySelector('.bandwidth-raccoon');
+        const bandwidthRaccoonBubbleText = document.querySelector('.bandwidth-raccoon-bubble-text');
+        const bandwidthRaccoonWrapper = document.querySelector('.bandwidth-raccoon-wrapper');
+
+        document.body.addEventListener("click", () => {
+            bandwidthRaccoonWrapper.classList.remove("speak");
+        });
+
+        bandwidthRaccoon.addEventListener("click", (event) => {
+            event.stopPropagation();
+            bandwidthRaccoonWrapper.classList.add("speak");
+            if (i >= randomSentences.length) {
+                i = 0;
+            }
+            bandwidthRaccoonBubbleText.innerText = randomSentences[i];
+            i += 1;
+        });
+    </script>
     <p style="font-family: Arial;">&copy; Created by cedkeChat01 and TeamChat Community.</p>
 </footer>
