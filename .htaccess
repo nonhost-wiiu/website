@@ -1,0 +1,12 @@
+# idk
+RewriteEngine On
+
+# When you go to nonhost.alwaysdata.net, the website start index.php file.
+RewriteRule ^$ /index.php [L] 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ErrorDocument
+ErrorDocument 404 /404.twig
+ErrorDocument 403 /403.twig
